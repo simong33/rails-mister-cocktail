@@ -8,9 +8,17 @@
 
 # Cocktail.all.each {|coc| coc.destroy}
 
-url = Nokogiri::HTML(open("http://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"))
-seeds = JSON.parse(url)
-seeds["drinks"].each do |record|
-  Cocktail.create!(name: record["strDrink"], image: record["strDrinkThumb"])
-end
+# url = Nokogiri::HTML(open("http://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"))
+# seeds = JSON.parse(url)
+# seeds["drinks"].each do |record|
+#   Cocktail.create!(name: record["strDrink"], image: record["strDrinkThumb"])
+# end
 
+1000.times do
+  Review.create!(
+    content: Faker::HarryPotter.quote,
+    rating: [0, 1, 2, 3, 4, 5].sample,
+    cocktail_id: Cocktail.all.sample.id
+  )
+end
+puts 'Finished!'

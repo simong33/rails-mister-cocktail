@@ -1,0 +1,7 @@
+<h3 class="text-center">Add a review to this cocktail</h3>
+<%= simple_form_for [@cocktail, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, collection: Review::RATINGS %>
+  <%= f.input :cocktail_id, input_html: { value: @cocktail.id }, as: :hidden %>
+  <%= f.button :submit, class: "btn btn-primary"%>
+<% end %>

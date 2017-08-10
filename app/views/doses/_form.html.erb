@@ -1,4 +1,4 @@
-<h2 class="text-center">Add an ingredient to this cocktail</h2>
+<h3 class="text-center">Add an ingredient to this cocktail</h3>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.input :ingredient_id, collection: Ingredient.all %>
