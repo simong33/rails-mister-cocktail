@@ -26,6 +26,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'pry'
+gem 'binding_of_caller'
+gem 'better_errors'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
