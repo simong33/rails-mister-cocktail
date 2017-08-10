@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-url = Nokogiri::HTML(open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"))
-seeds = JSON.parse(url.text)
-seeds["drinks"].each do |record|
-  Ingredient.create!(name: record["strIngredient1"])
-end
+# url = Nokogiri::HTML(open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"))
+# seeds = JSON.parse(url)
+# seeds["drinks"].each do |record|
+#   Ingredient.create!(name: record["strIngredient1"])
+# end
