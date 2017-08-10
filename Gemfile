@@ -28,6 +28,8 @@ gem 'autoprefixer-rails'
 gem 'pry'
 gem 'binding_of_caller'
 gem 'better_errors'
+gem 'high_voltage', '~> 3.0.0'
+gem 'link_thumbnailer'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

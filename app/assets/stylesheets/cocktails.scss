@@ -2,7 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.form {
+#form-new-cocktail {
+  margin: auto;
   vertical-align: middle;
-  display: inline-block;
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+  text-align: center;
+  height: 80vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
 }
