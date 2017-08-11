@@ -1,17 +1,15 @@
-<h1 class="text-center">Our cocktails</h1>
+<h1 class="text-center">Top 10 cocktails</h1>
 
 
 
 <div class="container">
   <div class="row">
-    <% @cocktails.each do |cocktail| %>
+    <% @top_cocktails.reverse.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.image.nil? ? Cocktail.first.image : cocktail.image %>);">
-          <div class="card-category">
-          <h1> <%= cocktail.reviews.empty? ? "0" : cocktail.starify %></h1>
-          </div>
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
+            <h3> <%= cocktail.mean_rating %> </h3>
           </div>
           <a class="card-link" href="/cocktails/<%= cocktail.id %>" ></a>
         </div>
@@ -19,4 +17,3 @@
     <% end %>
   </div>
 </div>
-

@@ -2,7 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
-        <h1> <%= "#{@cocktail.name} | #{@cocktail.mean_rating}/5" %></h1>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.image.nil? ? Cocktail.first.image : @cocktail.image %>);">
+          <div class="card-category"> <%= @cocktail.mean_rating %>/5</div>
+          <div class="card-description">
+            <h2><%= @cocktail.name %> </h2>
+          </div>
+        </div>
         <h3>Recipe:</h3>
         <ol>
           <% @cocktail.doses.each do |dose| %>
@@ -27,11 +32,12 @@
      <div class="col-sm-offset-3 col-sm-6">
       <h3 class="text-center">Last reviews</h3>
         <ul>
-          <% @cocktail.reviews.each do |review| %>
+          <% @cocktail.reviews.first(5).each do |review| %>
           <li>
             <%= "#{review.rating}/5: #{review.content}" %>
           </li>
           <% end %>
+          <li>...</li>
         </ul>
      </div>
     </div>

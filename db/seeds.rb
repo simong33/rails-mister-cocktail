@@ -21,4 +21,4 @@
     cocktail_id: Cocktail.all.sample.id
   )
 end
-puts 'Finished!'
+# puts 'Finished!'

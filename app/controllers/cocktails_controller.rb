@@ -22,6 +22,14 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def top
+    Cocktail.all.each do |cocktail|
+      cocktail[:mean_rating] = cocktail.mean_rating
+      cocktail.save
+    end
+    @top_cocktails = Cocktail.order(:mean_rating).last(10)
+  end
+
   private
 
   def cocktail_params

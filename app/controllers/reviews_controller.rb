@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.cocktail = Restaurant.find(params[:cocktail])
+    @review.cocktail = Cocktail.find(params[:cocktail_id])
     @review.save
 
     redirect_to cocktail_path(params[:cocktail_id])
