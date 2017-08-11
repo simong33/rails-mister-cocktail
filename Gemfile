@@ -31,6 +31,8 @@ gem 'better_errors'
 gem 'high_voltage', '~> 3.0.0'
 gem 'link_thumbnailer'
 gem 'faker'
+gem 'figaro'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
