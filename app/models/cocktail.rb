@@ -3,6 +3,8 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
   has_many :reviews, dependent: :destroy
   validates :name, presence: true, uniqueness: true
+  mount_uploader :photo, PhotoUploader
+  has_attachment :photo
 
   def thumbnailify
     object = LinkThumbnailer.generate('https://www.google.fr/search?q=' + self.name.gsub(' ','') + '&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjNhbi9xs3VAhVL2xoKHYYKAboQ_AUICigB&biw=1855&bih=990')

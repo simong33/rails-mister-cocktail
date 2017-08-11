@@ -32,6 +32,11 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'link_thumbnailer'
 gem 'faker'
 gem 'figaro'
+gem 'cloudinary', '1.1.7'
+gem 'carrierwave', '~> 0.11.2'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 
 
 # Use jquery as the JavaScript library

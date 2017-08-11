@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.image.nil? ? Cocktail.first.image : @cocktail.image %>);">
-          <div class="card-category"> <%= @cocktail.mean_rating %>/5</div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo.path, height: 300, width: 400, crop: :fill %>')">
+          <div class="card-category"> <%= @cocktail.mean_rating.nan? ? "No review yet" : "#{@cocktail.mean_rating}/5" %></div>
           <div class="card-description">
             <h2><%= @cocktail.name %> </h2>
           </div>

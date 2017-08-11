@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   root 'pages#home'
   get 'top' => 'cocktails#top'
+  mount Attachinary::Engine => "/attachinary"
 end
